@@ -12,3 +12,22 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Car-manufacturer-survey')
 
+def get_survey_data():
+    """
+    Get survey results input from the user.
+    
+    """
+    while True:
+        print("Enter results from the most recent survey.")
+        print("Data should be ten numbers separated by commas.")
+        print("Data must be entered from TOP to BOTTOM of the survey.")
+        print("The top number is Audi and the bottom is Pugeot.")
+        print("Example: 1,2,0,0,6,1,5,7,0,1\n")
+
+        data_in = input("Enter survey results here:\n")
+
+        survey_data = data_in.split(",")
+
+        print(survey_data)
+        break
+get_survey_data()
