@@ -17,7 +17,6 @@ SHEET = GSPREAD_CLIENT.open('Car-manufacturer-survey')
 def get_survey_data():
     """
     Get survey results input from the user.
-    
     """
     while True:
         print("Enter results from the most recent survey.")
@@ -80,7 +79,7 @@ def display_results():
     for i in range(len(keys)):
         totals[keys[i]] = values[i]
 
-    print(f'Below are the current totals\n')
+    print('Below are the current totals.\n')
 
     print("{:<10} {:<15}".format('BRAND', 'TOTAL'))
     for k, value in totals.items():
