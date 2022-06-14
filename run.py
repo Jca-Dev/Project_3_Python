@@ -42,7 +42,7 @@ def update_scoreboard(data, scoreboard):
     print(f"Updating {scoreboard}...\n")
     scoreboard_update = SHEET.worksheet(scoreboard)
     scoreboard_update.append_row(data)
-    print(f"{scoreboard} updated successfully\n")
+    print(f'The worksheet "{scoreboard}" has been updated successfully\n')
 
 
 def validate_data(values):
@@ -50,9 +50,10 @@ def validate_data(values):
     Validate user input data to make sure its within
     set paramaters in order to align with google sheet.
     """
+    Required_input_values = 10
     try:
         [int(value) for value in values]
-        if len(values) != 10:
+        if len(values) != Required_input_values:
             raise ValueError(
                 f"10 numbers required, You used {len(values)}"
             )
@@ -81,12 +82,33 @@ def display_results():
     print('Below are the current totals.\n')
 
     print("{:<10} {:<15}".format('BRAND', 'TOTAL'))
+
     for k, value in totals.items():
         content = value
         print("{:<10} {:<15}".format(k, content))
+    print("\n")
+    """
+    Asks user if they want to add more input if yes restarts the terminal
+    if no ends the function.
+    """
+    while True:
+        answer = input("Would you like to add more survey results? yes/no:\n")
+        if answer == "yes":
+            run_terminal()
+        elif answer == "no":
+            print("Terminal shutting down. Goodbye...")
+            break
+        else:
+            print(f'** Please enter "yes" or "no" you entered: {answer} ** \n')
 
 
-data = get_survey_data()
-survey_data = [int(num) for num in data]
-update_scoreboard(survey_data, "scoreboard")
-display_results()
+def run_terminal():
+    data = get_survey_data()
+    survey_data = [int(num) for num in data]
+    update_scoreboard(survey_data, "scoreboard")
+    display_results()
+
+
+print("Welcome to the survey data input terminal.")
+print("Please follow the instrutions bellow.\n")
+run_terminal()
