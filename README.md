@@ -1,6 +1,6 @@
 <h1>Car Manufacturer Survey</h1>
 <hr>
-The Car Manufacturer Survey Python termibal is desgined for the collection of survey data to be easily input to a google sheet document.<br> 
+The Car Manufacturer Survey Python terminal is designed for the collection of survey data to be easily input to a google sheet document.<br> 
 <a href="https://car-manufacturer-survey.herokuapp.com/">Click Here</a> to go to the live website.
 <hr>
 
@@ -9,7 +9,7 @@ The Car Manufacturer Survey Python termibal is desgined for the collection of su
 
 <h1>How it works</h1>
 <ul>
-    <li>The user follows the instructions printed at the top of the terminal. Entering the 10 numbers seperated by comma's from the survey results.</li>
+    <li>The user follows the instructions printed at the top of the terminal. Entering the 10 numbers separated by comma's from the survey results.</li>
     <li>The terminal runs and gives updates and feedback to the user that their input is valid and that its updating the sheet and finally when the sheet has updated successfully.</li>
     <li>Once the terminal has updated the sheet and verified to the user it was successful, it prints the current survey totals.</li>
     <li>The google sheet is updated with the data and returns the totals with a SUM within the sheet at the top.</li>
@@ -26,6 +26,7 @@ The Car Manufacturer Survey Python termibal is desgined for the collection of su
     <li>Instructions to the user.</li>
     <li>Feedback and updates while running.</li>
     <li>Prints current totals after each data input.</li>
+    <li>Has a loop at the end that asks if the user wants to enter more data (restarts) or not (ends all functions)</li>
 </ul>
 <h2>Future features</h2>
 <ul>
@@ -51,8 +52,8 @@ The Car Manufacturer Survey Python termibal is desgined for the collection of su
 The project was deployed to Heroku via GitHub by:
 <ol>
     <li>Logging Into Heroku, selecting my project, going to the settings page and adding the two required build packs (python) (nodejs).</li>
-    <li>Going to deploy, selecting deployment methood as GitHub and typing in the GitHub repository name.</li>
-    <li>Finally you can select deploy branch to manualy deploy or select automatic deployment (allows Heroku to rebuild the project after each push to GitHub.</li>
+    <li>Going to deploy, selecting deployment method as GitHub and typing in the GitHub repository name.</li>
+    <li>Finally you can select deploy branch to manually deploy or select automatic deployment (allows Heroku to rebuild the project after each push to GitHub.</li>
 </ol>
 The page is now published and the link is in the sett section at the bottom in Domains.
 
